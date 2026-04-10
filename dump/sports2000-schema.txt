@@ -1,0 +1,55 @@
+# Sports2000 Database Schema Summary
+
+This file provides a summary of the tables in the sports2000 database schema.
+
+## Tables
+
+- **Benefits** - Employee benefits information
+- **BillTo** - Bill-to address information
+- **Bin** - Warehouse bin locations
+- **Customer** - Customer master data (CustNum, Name, Address, City, State, Country, Phone, Contact, SalesRep, Comments, CreditLimit, Balance, Terms, Discount, PostalCode, Fax, EmailAddress)
+- **Department** - Department information
+- **Employee** - Employee master data
+- **Family** - Employee family information
+- **Feedback** - Customer feedback records
+- **InventoryTrans** - Inventory transaction history
+- **Invoice** - Invoice header information
+- **Item** - Item/Product master data (ItemNum, ItemName, CatPage, Price, CatDescription, Onhand, Allocated, ReOrder, OnOrder, Category1, Category2, Special, Weight, Minqty)
+- **LocalDefault** - Local default settings
+- **Order** - Order header information
+- **OrderLine** - Order line items
+- **POLine** - Purchase order line items
+- **PurchaseOrder** - Purchase order header
+- **RefCall** - Reference call records
+- **Salesrep** - Sales representative information
+- **ShipTo** - Ship-to address information
+- **State** - State/region codes
+- **Supplier** - Supplier master data
+- **SupplierItemXref** - Supplier to item cross-reference
+- **TimeSheet** - Employee timesheet entries
+- **Vacation** - Employee vacation records
+- **Warehouse** - Warehouse information
+
+## Sequences
+
+- NextCustNum - Customer number sequence
+- NextInvNum - Invoice number sequence
+- NextOrdNum - Order number sequence
+- NextItemNum - Item number sequence
+- NextRefNum - Reference number sequence
+- NextVisitor - Visitor number sequence
+- NextSupplNum - Supplier number sequence
+- NextLocalDefNum - Local default number sequence
+- NextWareNum - Warehouse number sequence
+- NextBinNum - Bin number sequence
+- NextPONum - Purchase order number sequence
+- NextEmpNum - Employee number sequence
+- NextInvTransNum - Inventory transaction number sequence
+
+## Key Tables Used in This Project
+
+### Customer
+Primary fields: CustNum (PK), Name, Address, City, State, Country, Phone, Contact, SalesRep, Comments, CreditLimit, Balance, Terms, Discount, PostalCode, Fax, EmailAddress
+
+### Item
+Primary fields: ItemNum (PK), ItemName, CatPage, Price, CatDescription, Onhand, Allocated, ReOrder, OnOrder, Category1, Category2, Special, Weight, Minqty
