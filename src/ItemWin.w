@@ -60,14 +60,9 @@ CREATE WIDGET-POOL.
 &Scoped-define FRAME-NAME DEFAULT-FRAME
 
 /* Internal Tables (found by Frame, Query & Browse Queries)             */
-&Scoped-define INTERNAL-TABLES Item
+/* No internal tables - using Business Entity pattern for data access */
 
 /* Definitions for FRAME DEFAULT-FRAME                                  */
-&Scoped-define QUERY-STRING-DEFAULT-FRAME FOR EACH Item SHARE-LOCK
-&Scoped-define OPEN-QUERY-DEFAULT-FRAME OPEN QUERY DEFAULT-FRAME FOR EACH Item SHARE-LOCK.
-&Scoped-define TABLES-IN-QUERY-DEFAULT-FRAME Item
-&Scoped-define FIRST-TABLE-IN-QUERY-DEFAULT-FRAME Item
-
 
 /* Standard List Definitions                                            */
 &Scoped-Define ENABLED-OBJECTS FILL-IN_ItemNum FILL-IN_Price BUTTON-4 ~
@@ -107,10 +102,7 @@ DEFINE VARIABLE FILL-IN_Price AS DECIMAL FORMAT "->,>>>,>>9.99" INITIAL 0
      SIZE 14 BY 1 NO-UNDO.
 
 /* Query definitions                                                    */
-&ANALYZE-SUSPEND
-DEFINE QUERY DEFAULT-FRAME FOR 
-      Item SCROLLING.
-&ANALYZE-RESUME
+/* No direct query - using Business Entity pattern for data access */
 
 /* ************************  Frame Definitions  *********************** */
 
@@ -180,15 +172,7 @@ THEN C-Win:HIDDEN = no.
 
 
 /* Setting information for Queries and Browse Widgets fields            */
-
-&ANALYZE-SUSPEND _QUERY-BLOCK FRAME DEFAULT-FRAME
-/* Query rebuild information for FRAME DEFAULT-FRAME
-     _TblList          = "sports.Item"
-     _Query            is OPENED
-*/  /* FRAME DEFAULT-FRAME */
-&ANALYZE-RESUME
-
- 
+/* No query block - using Business Entity pattern for data access */
 
 
 
@@ -356,13 +340,11 @@ PROCEDURE enable_UI :
                Settings" section of the widget Property Sheets.
 ------------------------------------------------------------------------------*/
 
-  {&OPEN-QUERY-DEFAULT-FRAME}
-  GET FIRST DEFAULT-FRAME.
+  /* No query operations - using Business Entity pattern for data access */
   DISPLAY FILL-IN_ItemNum FILL-IN_Price 
       WITH FRAME DEFAULT-FRAME IN WINDOW C-Win.
   ENABLE FILL-IN_ItemNum FILL-IN_Price BUTTON-4 BUTTON-3 
       WITH FRAME DEFAULT-FRAME IN WINDOW C-Win.
-  {&OPEN-BROWSERS-IN-QUERY-DEFAULT-FRAME}
   VIEW C-Win.
 END PROCEDURE.
 
